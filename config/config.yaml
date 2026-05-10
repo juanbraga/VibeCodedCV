@@ -1,0 +1,23 @@
+model:
+  weights: yolov8n.pt
+  confidence_threshold: 0.5
+  iou_threshold: 0.45
+  input_size: 640
+
+training:
+  epochs: 50
+  batch_size: 16
+  learning_rate: 0.01
+  patience: 10
+  save_period: 10
+  workers: 4
+  device: cpu
+
+dataset:
+  yaml: config/dataset.yaml
+  augment: true
+
+output:
+  dir: outputs
+  save_images: true
+  save_txt: true
